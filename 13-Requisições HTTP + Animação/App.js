@@ -63,6 +63,10 @@ export default function App() {
               onChangeText={(texto) => setCep(texto)}
               keyboardType="numeric"
               maxLength={8}
+              
+              // 🔴 Novas propriedades adicionadas abaixo:
+              returnKeyType="search"
+              onSubmitEditing={handleSearch}
             />
 
             <TouchableOpacity style={styles.button} onPress={handleSearch}>
