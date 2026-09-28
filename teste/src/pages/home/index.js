@@ -15,6 +15,7 @@ export default function Home() {
         <Text style={styles.subWelcomeText}>O que você gostaria de acessar hoje?</Text>
 
         <View style={styles.cardsRow}>
+          {/* Card Sobre Nós */}
           <TouchableOpacity 
             style={styles.card} 
             activeOpacity={0.8}
@@ -40,6 +41,16 @@ export default function Home() {
             <Text style={styles.cardSubtitle}>Fale com a equipe</Text>
           </TouchableOpacity>
         </View>
+
+        {/* Botão extra para ir aos Detalhes */}
+        <TouchableOpacity 
+          style={styles.detailsButton} 
+          activeOpacity={0.8}
+          onPress={() => navigation.navigate('Detalhes')}
+        >
+          <Ionicons name="fast-food-outline" size={20} color="#FFFFFF" style={{ marginRight: 8 }} />
+          <Text style={styles.detailsButtonText}>Ver Detalhes do Pedido</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -53,9 +64,9 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent:'center',
-    alignItems:'center',
-    paddingTop: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: 40,
   },
   welcomeText: {
     fontSize: 26,
@@ -72,15 +83,16 @@ const styles = StyleSheet.create({
   },
   cardsRow: {
     flexDirection: 'row',
-    justifyContent: 'center', // Centra os cartões horizontalmente no ecrã
+    justifyContent: 'center',
     alignItems: 'center',
-    gap: 16, // Cria um espaçamento moderno e uniforme entre eles
+    gap: 16,
+    marginBottom: 20,
   },
   card: {
     backgroundColor: '#1E1E1E',
     borderRadius: 16,
     padding: 20,
-    width: 160, // Largura fixa para manter ambos perfeitamente alinhados
+    width: 160,
     alignItems: 'center',
     borderWidth: 1,
     borderColor: '#2A2A2A',
@@ -112,5 +124,21 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#94A3B8',
     textAlign: 'center',
+  },
+  detailsButton: {
+    flexDirection: 'row',
+    backgroundColor: '#1E1E1E',
+    paddingVertical: 14,
+    paddingHorizontal: 24,
+    borderRadius: 14,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#2A2A2A',
+    marginTop: 10,
+  },
+  detailsButtonText: {
+    color: '#FFFFFF',
+    fontWeight: '600',
+    fontSize: 14,
   },
 });
